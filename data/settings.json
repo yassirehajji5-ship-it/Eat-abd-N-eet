@@ -1,0 +1,106 @@
+{
+  "restaurant": {
+    "name": "Eat & Meet Kénitra",
+    "shortName": "EAT & MEET",
+    "city": "Kénitra",
+    "country": "Morocco",
+    "tagline": "Restaurant • Café • Lounge",
+    "description": "Découvrez notre menu digital et laissez-vous guider par nos spécialités.",
+    "logo": "images/restaurant/logo.png",
+    "coverImage": "images/restaurant/cover.jpg"
+  },
+
+  "contact": {
+    "phone": "+212628919108",
+    "phoneDisplay": "+212 628-919108",
+    "whatsapp": "212628919108",
+    "instagram": "@eatandmeetkenitra",
+    "instagramUrl": "https://www.instagram.com/eatandmeetkenitra/",
+    "email": "",
+    "website": ""
+  },
+
+  "location": {
+    "address": "Route de la base aérienne, Rue Rosevelte, Kénitra, Morocco",
+    "city": "Kénitra",
+    "country": "Morocco",
+    "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Eat%20%26%20Meet%20K%C3%A9nitra"
+  },
+
+  "openingHours": {
+    "monday": {
+      "open": "09:00",
+      "close": "23:00",
+      "closed": false
+    },
+    "tuesday": {
+      "open": "09:00",
+      "close": "23:00",
+      "closed": false
+    },
+    "wednesday": {
+      "open": "09:00",
+      "close": "23:00",
+      "closed": false
+    },
+    "thursday": {
+      "open": "09:00",
+      "close": "23:00",
+      "closed": false
+    },
+    "friday": {
+      "open": "09:00",
+      "close": "00:00",
+      "closed": false
+    },
+    "saturday": {
+      "open": "09:00",
+      "close": "00:00",
+      "closed": false
+    },
+    "sunday": {
+      "open": "09:00",
+      "close": "23:00",
+      "closed": false
+    }
+  },
+
+  "order": {
+    "currency": "DH",
+    "currencySymbol": "DH",
+    "deliveryFee": 15,
+    "freeDeliveryFrom": 200,
+    "minimumOrder": 0,
+    "whatsappEnabled": true,
+    "deliveryEnabled": true,
+    "takeawayEnabled": true,
+    "dineInEnabled": true
+  },
+
+  "social": {
+    "instagram": "https://www.instagram.com/eatandmeetkenitra/",
+    "facebook": "",
+    "tiktok": ""
+  },
+
+  "features": {
+    "favorites": true,
+    "cart": true,
+    "search": true,
+    "whatsappOrdering": true,
+    "productDetails": true,
+    "animations": true
+  },
+
+  "design": {
+    "primaryColor": "#171717",
+    "secondaryColor": "#242424",
+    "accentColor": "#C89B5D",
+    "backgroundColor": "#0E0E0E",
+    "surfaceColor": "#191919",
+    "textColor": "#FFFFFF",
+    "mutedTextColor": "#A8A8A8",
+    "fontPrimary": "DM Sans",
+    "fontDisplay": "Playfair Display"
+  }
+}

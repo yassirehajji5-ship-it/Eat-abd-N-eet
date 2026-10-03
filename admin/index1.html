@@ -1,0 +1,2244 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Eat & Meet — Admin Dashboard</title>
+
+    <meta
+        name="description"
+        content="Administration du menu digital Eat & Meet Kénitra"
+    >
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Admin CSS -->
+    <link rel="stylesheet" href="style1.css">
+</head>
+
+<body>
+
+    <!-- =========================================================
+         ADMIN APP
+    ========================================================== -->
+    <div class="admin-app">
+
+        <!-- =====================================================
+             SIDEBAR
+        ====================================================== -->
+        <aside class="admin-sidebar" id="adminSidebar">
+
+            <!-- Logo -->
+            <div class="sidebar-brand">
+
+                <div class="brand-logo">
+                    <span>EM</span>
+                </div>
+
+                <div class="brand-text">
+                    <strong>EAT & MEET</strong>
+                    <small>KÉNITRA</small>
+                </div>
+
+                <button
+                    type="button"
+                    class="sidebar-close"
+                    id="sidebarClose"
+                    aria-label="Fermer le menu"
+                >
+                    <i data-lucide="x"></i>
+                </button>
+
+            </div>
+
+
+            <!-- Restaurant badge -->
+            <div class="restaurant-badge">
+
+                <div class="restaurant-badge-icon">
+                    <i data-lucide="store"></i>
+                </div>
+
+                <div>
+                    <strong>Restaurant</strong>
+                    <span>Administration</span>
+                </div>
+
+                <span class="online-dot"></span>
+
+            </div>
+
+
+            <!-- Navigation -->
+            <nav class="admin-navigation">
+
+                <p class="nav-title">PRINCIPAL</p>
+
+                <button
+                    class="nav-item active"
+                    type="button"
+                    data-page="dashboard"
+                >
+                    <span class="nav-icon">
+                        <i data-lucide="layout-dashboard"></i>
+                    </span>
+
+                    <span>Dashboard</span>
+                </button>
+
+
+                <button
+                    class="nav-item"
+                    type="button"
+                    data-page="products"
+                >
+                    <span class="nav-icon">
+                        <i data-lucide="utensils"></i>
+                    </span>
+
+                    <span>Produits</span>
+
+                    <span class="nav-count" id="sidebarProductCount">
+                        0
+                    </span>
+                </button>
+
+
+                <button
+                    class="nav-item"
+                    type="button"
+                    data-page="categories"
+                >
+                    <span class="nav-icon">
+                        <i data-lucide="folders"></i>
+                    </span>
+
+                    <span>Catégories</span>
+                </button>
+
+
+                <p class="nav-title">GESTION</p>
+
+
+                <button
+                    class="nav-item"
+                    type="button"
+                    data-page="images"
+                >
+                    <span class="nav-icon">
+                        <i data-lucide="images"></i>
+                    </span>
+
+                    <span>Images</span>
+                </button>
+
+
+                <button
+                    class="nav-item"
+                    type="button"
+                    data-page="orders"
+                >
+                    <span class="nav-icon">
+                        <i data-lucide="shopping-bag"></i>
+                    </span>
+
+                    <span>Commandes</span>
+
+                    <span
+                        class="nav-count notification-count"
+                        id="sidebarOrderCount"
+                    >
+                        0
+                    </span>
+                </button>
+
+
+                <button
+                    class="nav-item"
+                    type="button"
+                    data-page="settings"
+                >
+                    <span class="nav-icon">
+                        <i data-lucide="settings"></i>
+                    </span>
+
+                    <span>Paramètres</span>
+                </button>
+
+            </nav>
+
+
+            <!-- Sidebar bottom -->
+            <div class="sidebar-bottom">
+
+                <a
+                    href="../menu.html"
+                    class="view-menu-btn"
+                    target="_blank"
+                >
+                    <i data-lucide="external-link"></i>
+                    <span>Voir le menu</span>
+                </a>
+
+
+                <div class="admin-user">
+
+                    <div class="admin-avatar">
+                        EM
+                    </div>
+
+                    <div class="admin-user-info">
+                        <strong>Administrateur</strong>
+                        <span>Eat & Meet</span>
+                    </div>
+
+                    <button
+                        type="button"
+                        class="user-more"
+                        aria-label="Options"
+                    >
+                        <i data-lucide="more-vertical"></i>
+                    </button>
+
+                </div>
+
+            </div>
+
+        </aside>
+
+
+        <!-- Overlay mobile -->
+        <div
+            class="sidebar-overlay"
+            id="sidebarOverlay"
+        ></div>
+
+
+        <!-- =====================================================
+             MAIN
+        ====================================================== -->
+        <main class="admin-main">
+
+            <!-- =================================================
+                 TOPBAR
+            ================================================== -->
+            <header class="admin-topbar">
+
+                <div class="topbar-left">
+
+                    <button
+                        type="button"
+                        class="mobile-menu-btn"
+                        id="mobileMenuBtn"
+                        aria-label="Ouvrir le menu"
+                    >
+                        <i data-lucide="menu"></i>
+                    </button>
+
+
+                    <div class="page-heading">
+
+                        <span
+                            class="page-eyebrow"
+                            id="pageEyebrow"
+                        >
+                            ADMINISTRATION
+                        </span>
+
+                        <h1 id="pageTitle">
+                            Dashboard
+                        </h1>
+
+                    </div>
+
+                </div>
+
+
+                <div class="topbar-right">
+
+                    <!-- Search -->
+                    <div class="global-search">
+
+                        <i data-lucide="search"></i>
+
+                        <input
+                            type="search"
+                            id="globalSearch"
+                            placeholder="Rechercher..."
+                            autocomplete="off"
+                        >
+
+                        <kbd>⌘ K</kbd>
+
+                    </div>
+
+
+                    <!-- Notifications -->
+                    <button
+                        type="button"
+                        class="topbar-icon-btn"
+                        id="notificationBtn"
+                        aria-label="Notifications"
+                    >
+
+                        <i data-lucide="bell"></i>
+
+                        <span
+                            class="notification-dot"
+                            id="notificationDot"
+                        ></span>
+
+                    </button>
+
+
+                    <!-- Restaurant status -->
+                    <div class="restaurant-status">
+
+                        <span class="status-dot"></span>
+
+                        <span>En ligne</span>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+            <!-- =================================================
+                 PAGE CONTENT
+            ================================================== -->
+            <div class="admin-content">
+
+                <!-- =================================================
+                     DASHBOARD PAGE
+                ================================================== -->
+                <section
+                    class="admin-page active"
+                    id="page-dashboard"
+                >
+
+                    <!-- Welcome -->
+                    <div class="dashboard-welcome">
+
+                        <div>
+
+                            <span class="welcome-label">
+                                EAT & MEET KÉNITRA
+                            </span>
+
+                            <h2>
+                                Bonjour 👋
+                            </h2>
+
+                            <p>
+                                Gérez votre menu, vos produits et vos
+                                commandes depuis votre espace
+                                d'administration.
+                            </p>
+
+                        </div>
+
+                        <div class="welcome-actions">
+
+                            <button
+                                type="button"
+                                class="btn btn-primary"
+                                data-action="add-product"
+                            >
+                                <i data-lucide="plus"></i>
+                                Ajouter un produit
+                            </button>
+
+                            <a
+                                href="../menu.html"
+                                target="_blank"
+                                class="btn btn-secondary"
+                            >
+                                <i data-lucide="eye"></i>
+                                Voir le menu
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Statistics -->
+                    <div class="stats-grid">
+
+                        <!-- Products -->
+                        <article class="stat-card">
+
+                            <div class="stat-card-top">
+
+                                <div class="stat-icon purple">
+                                    <i data-lucide="utensils"></i>
+                                </div>
+
+                                <span class="stat-label">
+                                    Produits
+                                </span>
+
+                            </div>
+
+                            <div class="stat-value-row">
+
+                                <strong id="productCount">
+                                    0
+                                </strong>
+
+                                <span class="stat-change positive">
+                                    <i data-lucide="arrow-up-right"></i>
+                                    Menu
+                                </span>
+
+                            </div>
+
+                            <p>
+                                Produits disponibles dans le menu
+                            </p>
+
+                        </article>
+
+
+                        <!-- Categories -->
+                        <article class="stat-card">
+
+                            <div class="stat-card-top">
+
+                                <div class="stat-icon orange">
+                                    <i data-lucide="folders"></i>
+                                </div>
+
+                                <span class="stat-label">
+                                    Catégories
+                                </span>
+
+                            </div>
+
+                            <div class="stat-value-row">
+
+                                <strong id="categoryCount">
+                                    0
+                                </strong>
+
+                                <span class="stat-change neutral">
+                                    Actives
+                                </span>
+
+                            </div>
+
+                            <p>
+                                Catégories du menu
+                            </p>
+
+                        </article>
+
+
+                        <!-- Orders -->
+                        <article class="stat-card">
+
+                            <div class="stat-card-top">
+
+                                <div class="stat-icon green">
+                                    <i data-lucide="shopping-bag"></i>
+                                </div>
+
+                                <span class="stat-label">
+                                    Commandes
+                                </span>
+
+                            </div>
+
+                            <div class="stat-value-row">
+
+                                <strong id="orderCount">
+                                    0
+                                </strong>
+
+                                <span class="stat-change positive">
+                                    <i data-lucide="activity"></i>
+                                    Total
+                                </span>
+
+                            </div>
+
+                            <p>
+                                Commandes enregistrées
+                            </p>
+
+                        </article>
+
+
+                        <!-- Featured -->
+                        <article class="stat-card">
+
+                            <div class="stat-card-top">
+
+                                <div class="stat-icon gold">
+                                    <i data-lucide="star"></i>
+                                </div>
+
+                                <span class="stat-label">
+                                    Vedettes
+                                </span>
+
+                            </div>
+
+                            <div class="stat-value-row">
+
+                                <strong id="featuredCount">
+                                    0
+                                </strong>
+
+                                <span class="stat-change neutral">
+                                    Featured
+                                </span>
+
+                            </div>
+
+                            <p>
+                                Produits mis en avant
+                            </p>
+
+                        </article>
+
+                    </div>
+
+
+                    <!-- Dashboard columns -->
+                    <div class="dashboard-grid">
+
+                        <!-- Recent products -->
+                        <article class="dashboard-card">
+
+                            <div class="card-header">
+
+                                <div>
+                                    <span class="card-eyebrow">
+                                        MENU
+                                    </span>
+
+                                    <h3>
+                                        Produits récents
+                                    </h3>
+                                </div>
+
+                                <button
+                                    type="button"
+                                    class="text-btn"
+                                    data-page-link="products"
+                                >
+                                    Voir tout
+                                    <i data-lucide="arrow-right"></i>
+                                </button>
+
+                            </div>
+
+
+                            <div
+                                class="recent-products"
+                                id="recentProducts"
+                            >
+
+                                <div class="empty-dashboard">
+                                    <div class="empty-icon">
+                                        <i data-lucide="utensils"></i>
+                                    </div>
+
+                                    <strong>
+                                        Aucun produit
+                                    </strong>
+
+                                    <p>
+                                        Ajoutez votre premier produit.
+                                    </p>
+                                </div>
+
+                            </div>
+
+                        </article>
+
+
+                        <!-- Recent orders -->
+                        <article class="dashboard-card">
+
+                            <div class="card-header">
+
+                                <div>
+                                    <span class="card-eyebrow">
+                                        COMMANDES
+                                    </span>
+
+                                    <h3>
+                                        Commandes récentes
+                                    </h3>
+                                </div>
+
+                                <button
+                                    type="button"
+                                    class="text-btn"
+                                    data-page-link="orders"
+                                >
+                                    Voir tout
+                                    <i data-lucide="arrow-right"></i>
+                                </button>
+
+                            </div>
+
+
+                            <div
+                                class="recent-orders"
+                                id="recentOrders"
+                            >
+
+                                <div class="empty-dashboard">
+                                    <div class="empty-icon">
+                                        <i data-lucide="shopping-bag"></i>
+                                    </div>
+
+                                    <strong>
+                                        Aucune commande
+                                    </strong>
+
+                                    <p>
+                                        Les nouvelles commandes
+                                        apparaîtront ici.
+                                    </p>
+                                </div>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+
+                    <!-- Quick actions -->
+                    <div class="dashboard-card quick-actions-card">
+
+                        <div class="card-header">
+
+                            <div>
+                                <span class="card-eyebrow">
+                                    RACCOURCIS
+                                </span>
+
+                                <h3>
+                                    Actions rapides
+                                </h3>
+                            </div>
+
+                        </div>
+
+
+                        <div class="quick-actions">
+
+                            <button
+                                type="button"
+                                class="quick-action"
+                                data-action="add-product"
+                            >
+                                <span class="quick-action-icon">
+                                    <i data-lucide="plus"></i>
+                                </span>
+
+                                <span>
+                                    <strong>Ajouter un produit</strong>
+                                    <small>
+                                        Créer un nouvel article
+                                    </small>
+                                </span>
+
+                                <i
+                                    data-lucide="chevron-right"
+                                    class="quick-arrow"
+                                ></i>
+
+                            </button>
+
+
+                            <button
+                                type="button"
+                                class="quick-action"
+                                data-page-link="categories"
+                            >
+                                <span class="quick-action-icon">
+                                    <i data-lucide="folder-plus"></i>
+                                </span>
+
+                                <span>
+                                    <strong>Nouvelle catégorie</strong>
+                                    <small>
+                                        Organiser votre menu
+                                    </small>
+                                </span>
+
+                                <i
+                                    data-lucide="chevron-right"
+                                    class="quick-arrow"
+                                ></i>
+
+                            </button>
+
+
+                            <button
+                                type="button"
+                                class="quick-action"
+                                data-page-link="images"
+                            >
+                                <span class="quick-action-icon">
+                                    <i data-lucide="image-plus"></i>
+                                </span>
+
+                                <span>
+                                    <strong>Gérer les images</strong>
+                                    <small>
+                                        Bibliothèque du restaurant
+                                    </small>
+                                </span>
+
+                                <i
+                                    data-lucide="chevron-right"
+                                    class="quick-arrow"
+                                ></i>
+
+                            </button>
+
+
+                            <button
+                                type="button"
+                                class="quick-action"
+                                data-page-link="settings"
+                            >
+                                <span class="quick-action-icon">
+                                    <i data-lucide="sliders-horizontal"></i>
+                                </span>
+
+                                <span>
+                                    <strong>Paramètres</strong>
+                                    <small>
+                                        Informations du restaurant
+                                    </small>
+                                </span>
+
+                                <i
+                                    data-lucide="chevron-right"
+                                    class="quick-arrow"
+                                ></i>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- =================================================
+                     PRODUCTS PAGE
+                ================================================== -->
+                <section
+                    class="admin-page"
+                    id="page-products"
+                >
+
+                    <div class="section-toolbar">
+
+                        <div>
+                            <span class="page-section-label">
+                                MENU
+                            </span>
+
+                            <h2>
+                                Produits
+                            </h2>
+
+                            <p>
+                                Gérez les produits affichés sur votre
+                                menu digital.
+                            </p>
+                        </div>
+
+                        <button
+                            type="button"
+                            class="btn btn-primary"
+                            data-action="add-product"
+                        >
+                            <i data-lucide="plus"></i>
+                            Ajouter un produit
+                        </button>
+
+                    </div>
+
+
+                    <div class="content-card">
+
+                        <div class="table-toolbar">
+
+                            <div class="table-search">
+
+                                <i data-lucide="search"></i>
+
+                                <input
+                                    type="search"
+                                    id="productSearch"
+                                    placeholder="Rechercher un produit..."
+                                >
+
+                            </div>
+
+
+                            <select
+                                id="productCategoryFilter"
+                                class="filter-select"
+                            >
+                                <option value="all">
+                                    Toutes les catégories
+                                </option>
+                            </select>
+
+
+                            <select
+                                id="productAvailabilityFilter"
+                                class="filter-select"
+                            >
+                                <option value="all">
+                                    Tous
+                                </option>
+
+                                <option value="available">
+                                    Disponibles
+                                </option>
+
+                                <option value="unavailable">
+                                    Indisponibles
+                                </option>
+
+                                <option value="featured">
+                                    Produits vedettes
+                                </option>
+                            </select>
+
+                        </div>
+
+
+                        <div
+                            class="products-table-wrapper"
+                            id="productsTableWrapper"
+                        >
+
+                            <table class="admin-table">
+
+                                <thead>
+                                    <tr>
+                                        <th>Produit</th>
+                                        <th>Catégorie</th>
+                                        <th>Prix</th>
+                                        <th>Statut</th>
+                                        <th>Vedette</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody id="productsTableBody">
+                                </tbody>
+
+                            </table>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- =================================================
+                     CATEGORIES PAGE
+                ================================================== -->
+                <section
+                    class="admin-page"
+                    id="page-categories"
+                >
+
+                    <div class="section-toolbar">
+
+                        <div>
+                            <span class="page-section-label">
+                                MENU
+                            </span>
+
+                            <h2>
+                                Catégories
+                            </h2>
+
+                            <p>
+                                Organisez les catégories et sections
+                                de votre menu.
+                            </p>
+                        </div>
+
+                        <button
+                            type="button"
+                            class="btn btn-primary"
+                            data-action="add-category"
+                        >
+                            <i data-lucide="plus"></i>
+                            Ajouter une catégorie
+                        </button>
+
+                    </div>
+
+
+                    <div
+                        class="categories-admin-grid"
+                        id="categoriesAdminGrid"
+                    >
+                    </div>
+
+                </section>
+
+
+                <!-- =================================================
+                     IMAGES PAGE
+                ================================================== -->
+                <section
+                    class="admin-page"
+                    id="page-images"
+                >
+
+                    <div class="section-toolbar">
+
+                        <div>
+                            <span class="page-section-label">
+                                MÉDIA
+                            </span>
+
+                            <h2>
+                                Bibliothèque d'images
+                            </h2>
+
+                            <p>
+                                Gérez les images utilisées dans le menu.
+                            </p>
+                        </div>
+
+                        <button
+                            type="button"
+                            class="btn btn-primary"
+                            data-action="add-image"
+                        >
+                            <i data-lucide="upload"></i>
+                            Ajouter une image
+                        </button>
+
+                    </div>
+
+
+                    <div class="image-filter-bar">
+
+                        <button
+                            type="button"
+                            class="image-filter active"
+                            data-image-filter="all"
+                        >
+                            Toutes
+                        </button>
+
+                        <button
+                            type="button"
+                            class="image-filter"
+                            data-image-filter="restaurant"
+                        >
+                            Restaurant
+                        </button>
+
+                        <button
+                            type="button"
+                            class="image-filter"
+                            data-image-filter="products"
+                        >
+                            Produits
+                        </button>
+
+                        <button
+                            type="button"
+                            class="image-filter"
+                            data-image-filter="categories"
+                        >
+                            Catégories
+                        </button>
+
+                    </div>
+
+
+                    <div
+                        class="images-grid"
+                        id="imagesGrid"
+                    >
+                    </div>
+
+                </section>
+
+
+                <!-- =================================================
+                     ORDERS PAGE
+                ================================================== -->
+                <section
+                    class="admin-page"
+                    id="page-orders"
+                >
+
+                    <div class="section-toolbar">
+
+                        <div>
+                            <span class="page-section-label">
+                                VENTES
+                            </span>
+
+                            <h2>
+                                Commandes
+                            </h2>
+
+                            <p>
+                                Suivez et gérez les commandes reçues.
+                            </p>
+                        </div>
+
+                        <button
+                            type="button"
+                            class="btn btn-secondary"
+                            id="refreshOrders"
+                        >
+                            <i data-lucide="refresh-cw"></i>
+                            Actualiser
+                        </button>
+
+                    </div>
+
+
+                    <div class="order-status-tabs">
+
+                        <button
+                            type="button"
+                            class="order-tab active"
+                            data-order-status="all"
+                        >
+                            Toutes
+                            <span>0</span>
+                        </button>
+
+                        <button
+                            type="button"
+                            class="order-tab"
+                            data-order-status="new"
+                        >
+                            Nouvelles
+                            <span>0</span>
+                        </button>
+
+                        <button
+                            type="button"
+                            class="order-tab"
+                            data-order-status="confirmed"
+                        >
+                            Confirmées
+                            <span>0</span>
+                        </button>
+
+                        <button
+                            type="button"
+                            class="order-tab"
+                            data-order-status="preparing"
+                        >
+                            Préparation
+                            <span>0</span>
+                        </button>
+
+                        <button
+                            type="button"
+                            class="order-tab"
+                            data-order-status="ready"
+                        >
+                            Prêtes
+                            <span>0</span>
+                        </button>
+
+                        <button
+                            type="button"
+                            class="order-tab"
+                            data-order-status="delivered"
+                        >
+                            Livrées
+                            <span>0</span>
+                        </button>
+
+                    </div>
+
+
+                    <div class="content-card">
+
+                        <div
+                            class="orders-list"
+                            id="ordersList"
+                        >
+
+                            <div class="empty-dashboard">
+                                <div class="empty-icon">
+                                    <i data-lucide="shopping-bag"></i>
+                                </div>
+
+                                <strong>
+                                    Aucune commande
+                                </strong>
+
+                                <p>
+                                    Les commandes reçues apparaîtront
+                                    ici.
+                                </p>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- =================================================
+                     SETTINGS PAGE
+                ================================================== -->
+                <section
+                    class="admin-page"
+                    id="page-settings"
+                >
+
+                    <div class="section-toolbar">
+
+                        <div>
+                            <span class="page-section-label">
+                                CONFIGURATION
+                            </span>
+
+                            <h2>
+                                Paramètres
+                            </h2>
+
+                            <p>
+                                Configurez les informations de votre
+                                restaurant.
+                            </p>
+                        </div>
+
+                        <button
+                            type="button"
+                            class="btn btn-primary"
+                            id="saveSettings"
+                        >
+                            <i data-lucide="save"></i>
+                            Enregistrer
+                        </button>
+
+                    </div>
+
+
+                    <div class="settings-grid">
+
+                        <!-- Restaurant -->
+                        <div class="settings-card">
+
+                            <div class="settings-card-header">
+
+                                <div class="settings-icon">
+                                    <i data-lucide="store"></i>
+                                </div>
+
+                                <div>
+                                    <h3>
+                                        Restaurant
+                                    </h3>
+
+                                    <p>
+                                        Informations principales
+                                    </p>
+                                </div>
+
+                            </div>
+
+
+                            <div class="form-grid">
+
+                                <div class="form-group">
+
+                                    <label for="settingRestaurantName">
+                                        Nom du restaurant
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        id="settingRestaurantName"
+                                        placeholder="Eat & Meet Kénitra"
+                                    >
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label for="settingShortName">
+                                        Nom court
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        id="settingShortName"
+                                        placeholder="EAT & MEET"
+                                    >
+
+                                </div>
+
+
+                                <div class="form-group full">
+
+                                    <label for="settingTagline">
+                                        Slogan
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        id="settingTagline"
+                                        placeholder="Restaurant • Café • Lounge"
+                                    >
+
+                                </div>
+
+
+                                <div class="form-group full">
+
+                                    <label for="settingDescription">
+                                        Description
+                                    </label>
+
+                                    <textarea
+                                        id="settingDescription"
+                                        rows="4"
+                                        placeholder="Description du restaurant..."
+                                    ></textarea>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Contact -->
+                        <div class="settings-card">
+
+                            <div class="settings-card-header">
+
+                                <div class="settings-icon">
+                                    <i data-lucide="phone"></i>
+                                </div>
+
+                                <div>
+                                    <h3>
+                                        Contact
+                                    </h3>
+
+                                    <p>
+                                        Téléphone et réseaux sociaux
+                                    </p>
+                                </div>
+
+                            </div>
+
+
+                            <div class="form-grid">
+
+                                <div class="form-group">
+
+                                    <label for="settingPhone">
+                                        Téléphone
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        id="settingPhone"
+                                        placeholder="+212 628-919108"
+                                    >
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label for="settingWhatsapp">
+                                        WhatsApp
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        id="settingWhatsapp"
+                                        placeholder="212628919108"
+                                    >
+
+                                </div>
+
+
+                                <div class="form-group full">
+
+                                    <label for="settingInstagram">
+                                        Instagram
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        id="settingInstagram"
+                                        placeholder="@eatandmeetkenitra"
+                                    >
+
+                                </div>
+
+
+                                <div class="form-group full">
+
+                                    <label for="settingInstagramUrl">
+                                        URL Instagram
+                                    </label>
+
+                                    <input
+                                        type="url"
+                                        id="settingInstagramUrl"
+                                        placeholder="https://instagram.com/..."
+                                    >
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Location -->
+                        <div class="settings-card">
+
+                            <div class="settings-card-header">
+
+                                <div class="settings-icon">
+                                    <i data-lucide="map-pin"></i>
+                                </div>
+
+                                <div>
+                                    <h3>
+                                        Localisation
+                                    </h3>
+
+                                    <p>
+                                        Adresse du restaurant
+                                    </p>
+                                </div>
+
+                            </div>
+
+
+                            <div class="form-grid">
+
+                                <div class="form-group full">
+
+                                    <label for="settingAddress">
+                                        Adresse
+                                    </label>
+
+                                    <textarea
+                                        id="settingAddress"
+                                        rows="3"
+                                        placeholder="Adresse du restaurant..."
+                                    ></textarea>
+
+                                </div>
+
+
+                                <div class="form-group full">
+
+                                    <label for="settingMaps">
+                                        Google Maps
+                                    </label>
+
+                                    <input
+                                        type="url"
+                                        id="settingMaps"
+                                        placeholder="https://www.google.com/maps/..."
+                                    >
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Orders -->
+                        <div class="settings-card">
+
+                            <div class="settings-card-header">
+
+                                <div class="settings-icon">
+                                    <i data-lucide="shopping-cart"></i>
+                                </div>
+
+                                <div>
+                                    <h3>
+                                        Commandes
+                                    </h3>
+
+                                    <p>
+                                        Configuration des commandes
+                                    </p>
+                                </div>
+
+                            </div>
+
+
+                            <div class="form-grid">
+
+                                <div class="form-group">
+
+                                    <label for="settingCurrency">
+                                        Devise
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        id="settingCurrency"
+                                        value="DH"
+                                    >
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label for="settingDeliveryFee">
+                                        Frais de livraison
+                                    </label>
+
+                                    <input
+                                        type="number"
+                                        id="settingDeliveryFee"
+                                        min="0"
+                                        value="15"
+                                    >
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label for="settingFreeDelivery">
+                                        Livraison gratuite à partir de
+                                    </label>
+
+                                    <input
+                                        type="number"
+                                        id="settingFreeDelivery"
+                                        min="0"
+                                        value="200"
+                                    >
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="settings-toggles">
+
+                                <label class="toggle-row">
+
+                                    <span>
+                                        <strong>
+                                            Commande WhatsApp
+                                        </strong>
+
+                                        <small>
+                                            Autoriser les commandes via
+                                            WhatsApp
+                                        </small>
+                                    </span>
+
+                                    <input
+                                        type="checkbox"
+                                        id="settingWhatsappEnabled"
+                                        checked
+                                    >
+
+                                    <span class="toggle-switch"></span>
+
+                                </label>
+
+
+                                <label class="toggle-row">
+
+                                    <span>
+                                        <strong>
+                                            Livraison
+                                        </strong>
+
+                                        <small>
+                                            Activer la livraison
+                                        </small>
+                                    </span>
+
+                                    <input
+                                        type="checkbox"
+                                        id="settingDeliveryEnabled"
+                                        checked
+                                    >
+
+                                    <span class="toggle-switch"></span>
+
+                                </label>
+
+
+                                <label class="toggle-row">
+
+                                    <span>
+                                        <strong>
+                                            À emporter
+                                        </strong>
+
+                                        <small>
+                                            Autoriser les commandes à
+                                            emporter
+                                        </small>
+                                    </span>
+
+                                    <input
+                                        type="checkbox"
+                                        id="settingTakeawayEnabled"
+                                        checked
+                                    >
+
+                                    <span class="toggle-switch"></span>
+
+                                </label>
+
+
+                                <label class="toggle-row">
+
+                                    <span>
+                                        <strong>
+                                            Sur place
+                                        </strong>
+
+                                        <small>
+                                            Autoriser les commandes à
+                                            table
+                                        </small>
+                                    </span>
+
+                                    <input
+                                        type="checkbox"
+                                        id="settingDineInEnabled"
+                                        checked
+                                    >
+
+                                    <span class="toggle-switch"></span>
+
+                                </label>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+            </div>
+
+        </main>
+
+    </div>
+
+
+    <!-- =========================================================
+         PRODUCT MODAL
+    ========================================================== -->
+    <div
+        class="admin-modal"
+        id="productModal"
+        aria-hidden="true"
+    >
+
+        <div class="modal-backdrop" data-close-modal></div>
+
+        <div class="modal-container">
+
+            <div class="modal-header">
+
+                <div>
+                    <span class="modal-eyebrow">
+                        MENU
+                    </span>
+
+                    <h2 id="productModalTitle">
+                        Ajouter un produit
+                    </h2>
+                </div>
+
+                <button
+                    type="button"
+                    class="modal-close"
+                    data-close-modal
+                    aria-label="Fermer"
+                >
+                    <i data-lucide="x"></i>
+                </button>
+
+            </div>
+
+
+            <form id="productForm">
+
+                <input
+                    type="hidden"
+                    id="productId"
+                >
+
+
+                <div class="modal-body">
+
+                    <div class="product-form-image">
+
+                        <div
+                            class="product-image-preview"
+                            id="productImagePreview"
+                        >
+                            <i data-lucide="image"></i>
+
+                            <span>
+                                Aperçu
+                            </span>
+                        </div>
+
+                        <input
+                            type="text"
+                            id="productImage"
+                            placeholder="images/pizza/margherita.jpg"
+                        >
+
+                    </div>
+
+
+                    <div class="form-grid">
+
+                        <div class="form-group full">
+
+                            <label for="productName">
+                                Nom du produit *
+                            </label>
+
+                            <input
+                                type="text"
+                                id="productName"
+                                required
+                                placeholder="Ex: Burger Signature"
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="productCategory">
+                                Catégorie *
+                            </label>
+
+                            <select
+                                id="productCategory"
+                                required
+                            >
+                                <option value="">
+                                    Sélectionner...
+                                </option>
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="productSection">
+                                Section *
+                            </label>
+
+                            <select
+                                id="productSection"
+                                required
+                            >
+                                <option value="">
+                                    Sélectionner...
+                                </option>
+
+                                <option value="entrees">
+                                    Entrées
+                                </option>
+
+                                <option value="plats">
+                                    Plats principaux
+                                </option>
+
+                                <option value="desserts">
+                                    Desserts
+                                </option>
+
+                                <option value="boissons">
+                                    Boissons
+                                </option>
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="productPrice">
+                                Prix *
+                            </label>
+
+                            <div class="input-with-suffix">
+
+                                <input
+                                    type="number"
+                                    id="productPrice"
+                                    min="0"
+                                    step="0.01"
+                                    required
+                                    placeholder="65"
+                                >
+
+                                <span>
+                                    DH
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="productCurrency">
+                                Devise
+                            </label>
+
+                            <input
+                                type="text"
+                                id="productCurrency"
+                                value="DH"
+                            >
+
+                        </div>
+
+
+                        <div class="form-group full">
+
+                            <label for="productDescription">
+                                Description
+                            </label>
+
+                            <textarea
+                                id="productDescription"
+                                rows="4"
+                                placeholder="Description du produit..."
+                            ></textarea>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="product-form-options">
+
+                        <label class="checkbox-row">
+
+                            <input
+                                type="checkbox"
+                                id="productFeatured"
+                            >
+
+                            <span class="custom-checkbox">
+                                <i data-lucide="check"></i>
+                            </span>
+
+                            <span>
+                                <strong>
+                                    Produit vedette
+                                </strong>
+
+                                <small>
+                                    Mettre en avant ce produit dans le
+                                    menu.
+                                </small>
+                            </span>
+
+                        </label>
+
+
+                        <label class="checkbox-row">
+
+                            <input
+                                type="checkbox"
+                                id="productAvailable"
+                                checked
+                            >
+
+                            <span class="custom-checkbox">
+                                <i data-lucide="check"></i>
+                            </span>
+
+                            <span>
+                                <strong>
+                                    Disponible
+                                </strong>
+
+                                <small>
+                                    Le produit est visible et
+                                    commandable.
+                                </small>
+                            </span>
+
+                        </label>
+
+                    </div>
+
+                </div>
+
+
+                <div class="modal-footer">
+
+                    <button
+                        type="button"
+                        class="btn btn-secondary"
+                        data-close-modal
+                    >
+                        Annuler
+                    </button>
+
+                    <button
+                        type="submit"
+                        class="btn btn-primary"
+                    >
+                        <i data-lucide="save"></i>
+                        Enregistrer
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================================================
+         CATEGORY MODAL
+    ========================================================== -->
+    <div
+        class="admin-modal"
+        id="categoryModal"
+        aria-hidden="true"
+    >
+
+        <div class="modal-backdrop" data-close-modal></div>
+
+        <div class="modal-container small-modal">
+
+            <div class="modal-header">
+
+                <div>
+                    <span class="modal-eyebrow">
+                        MENU
+                    </span>
+
+                    <h2>
+                        Ajouter une catégorie
+                    </h2>
+                </div>
+
+                <button
+                    type="button"
+                    class="modal-close"
+                    data-close-modal
+                >
+                    <i data-lucide="x"></i>
+                </button>
+
+            </div>
+
+
+            <form id="categoryForm">
+
+                <div class="modal-body">
+
+                    <div class="form-group">
+
+                        <label for="categoryName">
+                            Nom de la catégorie *
+                        </label>
+
+                        <input
+                            type="text"
+                            id="categoryName"
+                            required
+                            placeholder="Ex: Pizza"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="categoryDescription">
+                            Description
+                        </label>
+
+                        <textarea
+                            id="categoryDescription"
+                            rows="3"
+                            placeholder="Description..."
+                        ></textarea>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="categorySection">
+                            Section
+                        </label>
+
+                        <select id="categorySection">
+
+                            <option value="entrees">
+                                Entrées
+                            </option>
+
+                            <option value="plats">
+                                Plats principaux
+                            </option>
+
+                            <option value="desserts">
+                                Desserts
+                            </option>
+
+                            <option value="boissons">
+                                Boissons
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="categoryImage">
+                            Image
+                        </label>
+
+                        <input
+                            type="text"
+                            id="categoryImage"
+                            placeholder="images/pizza/category.jpg"
+                        >
+
+                    </div>
+
+
+                    <label class="checkbox-row">
+
+                        <input
+                            type="checkbox"
+                            id="categoryActive"
+                            checked
+                        >
+
+                        <span class="custom-checkbox">
+                            <i data-lucide="check"></i>
+                        </span>
+
+                        <span>
+                            <strong>
+                                Catégorie active
+                            </strong>
+
+                            <small>
+                                Afficher cette catégorie dans le menu.
+                            </small>
+                        </span>
+
+                    </label>
+
+                </div>
+
+
+                <div class="modal-footer">
+
+                    <button
+                        type="button"
+                        class="btn btn-secondary"
+                        data-close-modal
+                    >
+                        Annuler
+                    </button>
+
+                    <button
+                        type="submit"
+                        class="btn btn-primary"
+                    >
+                        <i data-lucide="plus"></i>
+                        Ajouter
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================================================
+         IMAGE MODAL
+    ========================================================== -->
+    <div
+        class="admin-modal"
+        id="imageModal"
+        aria-hidden="true"
+    >
+
+        <div class="modal-backdrop" data-close-modal></div>
+
+        <div class="modal-container small-modal">
+
+            <div class="modal-header">
+
+                <div>
+                    <span class="modal-eyebrow">
+                        MÉDIA
+                    </span>
+
+                    <h2>
+                        Ajouter une image
+                    </h2>
+                </div>
+
+                <button
+                    type="button"
+                    class="modal-close"
+                    data-close-modal
+                >
+                    <i data-lucide="x"></i>
+                </button>
+
+            </div>
+
+
+            <form id="imageForm">
+
+                <div class="modal-body">
+
+                    <div class="upload-zone" id="uploadZone">
+
+                        <i data-lucide="cloud-upload"></i>
+
+                        <strong>
+                            Ajouter une image
+                        </strong>
+
+                        <span>
+                            Cliquez ou déposez une image ici
+                        </span>
+
+                        <input
+                            type="file"
+                            id="imageFile"
+                            accept="image/*"
+                            hidden
+                        >
+
+                        <button
+                            type="button"
+                            class="btn btn-secondary"
+                            id="chooseImageBtn"
+                        >
+                            Choisir une image
+                        </button>
+
+                    </div>
+
+
+                    <div
+                        class="image-upload-preview"
+                        id="imageUploadPreview"
+                        hidden
+                    >
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="imagePath">
+                            Chemin de l'image
+                        </label>
+
+                        <input
+                            type="text"
+                            id="imagePath"
+                            placeholder="images/pizza/image.jpg"
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <div class="modal-footer">
+
+                    <button
+                        type="button"
+                        class="btn btn-secondary"
+                        data-close-modal
+                    >
+                        Annuler
+                    </button>
+
+                    <button
+                        type="submit"
+                        class="btn btn-primary"
+                    >
+                        <i data-lucide="save"></i>
+                        Enregistrer
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================================================
+         TOAST
+    ========================================================== -->
+    <div
+        class="admin-toast"
+        id="adminToast"
+        role="status"
+        aria-live="polite"
+    >
+
+        <div class="toast-icon">
+            <i data-lucide="check"></i>
+        </div>
+
+        <div class="toast-content">
+
+            <strong id="toastTitle">
+                Succès
+            </strong>
+
+            <span id="toastMessage">
+                Modification enregistrée.
+            </span>
+
+        </div>
+
+        <button
+            type="button"
+            class="toast-close"
+            id="toastClose"
+            aria-label="Fermer"
+        >
+            <i data-lucide="x"></i>
+        </button>
+
+    </div>
+
+
+    <!-- =========================================================
+         CONFIRMATION MODAL
+    ========================================================== -->
+    <div
+        class="admin-modal"
+        id="confirmModal"
+        aria-hidden="true"
+    >
+
+        <div class="modal-backdrop" data-close-modal></div>
+
+        <div class="modal-container confirm-modal">
+
+            <div class="confirm-icon">
+                <i data-lucide="triangle-alert"></i>
+            </div>
+
+            <h2 id="confirmTitle">
+                Confirmer la suppression
+            </h2>
+
+            <p id="confirmMessage">
+                Cette action est irréversible.
+            </p>
+
+            <div class="modal-footer">
+
+                <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-close-modal
+                >
+                    Annuler
+                </button>
+
+                <button
+                    type="button"
+                    class="btn btn-danger"
+                    id="confirmAction"
+                >
+                    Supprimer
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================================================
+         ADMIN JAVASCRIPT
+    ========================================================== -->
+    <script src="script1.js"></script>
+
+</body>
+</html>

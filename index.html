@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Eat & Meet — Kénitra</title>
+
+    <meta
+        name="description"
+        content="Menu digital officiel de Eat & Meet Kénitra."
+    >
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- =========================
+     LOADING SCREEN
+========================= -->
+
+<div class="loader" id="loader">
+    <div class="loader-logo">
+        <span>E</span>
+        <span>&</span>
+        <span>M</span>
+    </div>
+
+    <p>Eat & Meet</p>
+</div>
+
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header class="header">
+
+    <div class="header-container">
+
+        <a href="index.html" class="logo">
+            <span class="logo-main">EAT & MEET</span>
+            <span class="logo-location">KÉNITRA</span>
+        </a>
+
+
+        <nav class="contact-nav">
+
+            <a
+                href="tel:+212628919108"
+                class="contact-btn"
+                aria-label="Téléphone"
+            >
+                <i data-lucide="phone"></i>
+                <span>Téléphone</span>
+            </a>
+
+
+            <a
+                href="https://wa.me/212628919108"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="contact-btn"
+                aria-label="WhatsApp"
+            >
+                <i data-lucide="message-circle"></i>
+                <span>WhatsApp</span>
+            </a>
+
+
+            <a
+                href="https://www.instagram.com/eatandmeetkenitra/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="contact-btn"
+                aria-label="Instagram"
+            >
+                <i data-lucide="instagram"></i>
+                <span>Instagram</span>
+            </a>
+
+
+            <a
+                href="https://www.google.com/maps/search/?api=1&query=Eat+%26+Meet+Kenitra+Morocco"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="contact-btn"
+                aria-label="Localisation"
+            >
+                <i data-lucide="map-pin"></i>
+                <span>Localisation</span>
+            </a>
+
+        </nav>
+
+
+        <button
+            class="cart-button"
+            id="cartButton"
+            aria-label="Ouvrir le panier"
+        >
+            <i data-lucide="shopping-bag"></i>
+
+            <span class="cart-count" id="cartCount">
+                0
+            </span>
+        </button>
+
+    </div>
+
+</header>
+
+
+
+<!-- =========================
+     MAIN
+========================= -->
+
+<main>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero">
+
+    <div class="hero-image">
+
+        <img
+            src="images/restaurant/cover.jpg"
+            alt="Eat & Meet Kénitra"
+            onerror="this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1800&q=85'"
+        >
+
+    </div>
+
+
+    <div class="hero-overlay"></div>
+
+
+    <div class="hero-content">
+
+        <span class="hero-small">
+            RESTAURANT • CAFÉ • LOUNGE
+        </span>
+
+        <h1>
+            Bienvenue chez
+            <strong>Eat & Meet</strong>
+        </h1>
+
+        <p>
+            Découvrez notre menu digital,
+            explorez nos spécialités et
+            profitez d'une expérience simple,
+            rapide et moderne.
+        </p>
+
+
+        <div class="hero-actions">
+
+            <a
+                href="#menu"
+                class="primary-btn"
+            >
+                Découvrir le menu
+                <i data-lucide="arrow-down"></i>
+            </a>
+
+
+            <a
+                href="https://www.google.com/maps/search/?api=1&query=Eat+%26+Meet+Kenitra+Morocco"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="secondary-btn"
+            >
+                <i data-lucide="map-pin"></i>
+                Nous trouver
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     WELCOME
+========================= -->
+
+<section class="welcome section">
+
+    <div class="section-heading">
+
+        <span class="eyebrow">
+            EAT & MEET
+        </span>
+
+        <h2>
+            Une expérience
+            <span>gourmande</span>
+        </h2>
+
+        <p>
+            Explorez notre carte, découvrez nos spécialités
+            et composez votre commande en quelques clics.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     MAIN MENU GATEWAYS
+========================= -->
+
+<section
+    class="menu-gateways section"
+    id="menu"
+>
+
+    <div class="section-heading">
+
+        <span class="eyebrow">
+            NOTRE MENU
+        </span>
+
+        <h2>
+            Choisissez votre univers
+        </h2>
+
+        <p>
+            Entrez dans une catégorie pour découvrir
+            notre sélection.
+        </p>
+
+    </div>
+
+
+    <div class="gateway-grid">
+
+
+        <!-- ENTRÉES -->
+
+        <a
+            href="menu.html?category=entrees"
+            class="gateway-card"
+        >
+
+            <div class="gateway-image">
+
+                <img
+                    src="images/entrees/entrees.jpg"
+                    alt="Entrées"
+                    onerror="this.src='https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&w=1000&q=80'"
+                >
+
+            </div>
+
+            <div class="gateway-overlay"></div>
+
+            <div class="gateway-content">
+
+                <span>01</span>
+
+                <h3>
+                    Entrées
+                </h3>
+
+                <p>
+                    Pour commencer
+                </p>
+
+                <div class="gateway-arrow">
+                    <i data-lucide="arrow-up-right"></i>
+                </div>
+
+            </div>
+
+        </a>
+
+
+
+        <!-- PLATS -->
+
+        <a
+            href="menu.html?category=plats"
+            class="gateway-card"
+        >
+
+            <div class="gateway-image">
+
+                <img
+                    src="images/pizza/pizza.jpg"
+                    alt="Plats principaux"
+                    onerror="this.src='https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1000&q=80'"
+                >
+
+            </div>
+
+            <div class="gateway-overlay"></div>
+
+            <div class="gateway-content">
+
+                <span>02</span>
+
+                <h3>
+                    Plats principaux
+                </h3>
+
+                <p>
+                    Nos spécialités
+                </p>
+
+                <div class="gateway-arrow">
+                    <i data-lucide="arrow-up-right"></i>
+                </div>
+
+            </div>
+
+        </a>
+
+
+
+        <!-- DESSERTS -->
+
+        <a
+            href="menu.html?category=desserts"
+            class="gateway-card"
+        >
+
+            <div class="gateway-image">
+
+                <img
+                    src="images/desserts/dessert.jpg"
+                    alt="Desserts"
+                    onerror="this.src='https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=1000&q=80'"
+                >
+
+            </div>
+
+            <div class="gateway-overlay"></div>
+
+            <div class="gateway-content">
+
+                <span>03</span>
+
+                <h3>
+                    Desserts
+                </h3>
+
+                <p>
+                    Une touche gourmande
+                </p>
+
+                <div class="gateway-arrow">
+                    <i data-lucide="arrow-up-right"></i>
+                </div>
+
+            </div>
+
+        </a>
+
+
+
+        <!-- BOISSONS -->
+
+        <a
+            href="menu.html?category=boissons"
+            class="gateway-card"
+        >
+
+            <div class="gateway-image">
+
+                <img
+                    src="images/boissons/boissons.jpg"
+                    alt="Boissons"
+                    onerror="this.src='https://images.unsplash.com/photo-1544145945-f90425340c7e?auto=format&fit=crop&w=1000&q=80'"
+                >
+
+            </div>
+
+            <div class="gateway-overlay"></div>
+
+            <div class="gateway-content">
+
+                <span>04</span>
+
+                <h3>
+                    Boissons
+                </h3>
+
+                <p>
+                    Fraîches & gourmandes
+                </p>
+
+                <div class="gateway-arrow">
+                    <i data-lucide="arrow-up-right"></i>
+                </div>
+
+            </div>
+
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     RESTAURANT INFO
+========================= -->
+
+<section class="restaurant-info section">
+
+    <div class="info-image">
+
+        <img
+            src="images/restaurant/interior.jpg"
+            alt="Eat & Meet intérieur"
+            onerror="this.src='https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=1200&q=85'"
+        >
+
+    </div>
+
+
+    <div class="info-content">
+
+        <span class="eyebrow">
+            EAT & MEET KÉNITRA
+        </span>
+
+        <h2>
+            Votre table,
+            votre moment.
+        </h2>
+
+        <p>
+            Que vous soyez ici pour un déjeuner,
+            un dîner entre amis ou simplement
+            une pause gourmande, notre carte
+            vous accompagne à chaque moment.
+        </p>
+
+
+        <div class="info-details">
+
+            <div class="info-item">
+
+                <i data-lucide="map-pin"></i>
+
+                <div>
+                    <strong>Adresse</strong>
+
+                    <span>
+                        Route de la base aérienne,
+                        Rue Rosevelte, Kénitra
+                    </span>
+                </div>
+
+            </div>
+
+
+            <div class="info-item">
+
+                <i data-lucide="phone"></i>
+
+                <div>
+                    <strong>Téléphone</strong>
+
+                    <span>
+                        +212 628-919108
+                    </span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer class="footer">
+
+    <div class="footer-logo">
+        EAT & MEET
+    </div>
+
+    <p>
+        Restaurant • Café • Lounge
+    </p>
+
+
+    <div class="footer-socials">
+
+        <a
+            href="https://www.instagram.com/eatandmeetkenitra/"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            <i data-lucide="instagram"></i>
+        </a>
+
+
+        <a
+            href="https://wa.me/212628919108"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            <i data-lucide="message-circle"></i>
+        </a>
+
+
+        <a
+            href="https://www.google.com/maps/search/?api=1&query=Eat+%26+Meet+Kenitra+Morocco"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            <i data-lucide="map-pin"></i>
+        </a>
+
+    </div>
+
+
+    <p class="copyright">
+        © 2026 Eat & Meet Kénitra. Tous droits réservés.
+    </p>
+
+</footer>
+
+</main>
+
+
+
+<!-- =========================
+     CART DRAWER
+========================= -->
+
+<div
+    class="cart-overlay"
+    id="cartOverlay"
+></div>
+
+
+<aside
+    class="cart-drawer"
+    id="cartDrawer"
+>
+
+    <div class="cart-header">
+
+        <div>
+
+            <span class="eyebrow">
+                VOTRE COMMANDE
+            </span>
+
+            <h2>
+                Panier
+            </h2>
+
+        </div>
+
+
+        <button
+            class="close-cart"
+            id="closeCart"
+            aria-label="Fermer"
+        >
+            <i data-lucide="x"></i>
+        </button>
+
+    </div>
+
+
+    <div
+        class="cart-items"
+        id="cartItems"
+    >
+
+        <div class="empty-cart">
+
+            <i data-lucide="shopping-bag"></i>
+
+            <h3>
+                Votre panier est vide
+            </h3>
+
+            <p>
+                Ajoutez vos plats préférés
+                pour commencer votre commande.
+            </p>
+
+            <button
+                class="primary-btn"
+                id="continueShopping"
+            >
+                Découvrir le menu
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <div class="cart-footer">
+
+        <div class="cart-total">
+
+            <span>
+                Total
+            </span>
+
+            <strong id="cartTotal">
+                0 DH
+            </strong>
+
+        </div>
+
+
+        <button
+            class="checkout-btn"
+            id="checkoutButton"
+        >
+            Commander
+            <i data-lucide="arrow-right"></i>
+        </button>
+
+    </div>
+
+</aside>
+
+
+
+<!-- =========================
+     SCRIPT
+========================= -->
+
+<script src="script.js"></script>
+
+<script>
+    lucide.createIcons();
+</script>
+
+</body>
+</html>

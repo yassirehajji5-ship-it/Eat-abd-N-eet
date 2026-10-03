@@ -1,0 +1,249 @@
+[
+  {
+    "id": "entrees",
+    "name": "Entrées",
+    "description": "Pour commencer",
+    "section": "entrees",
+    "image": "images/entrees/tapas.jpg",
+    "icon": "utensils",
+    "active": true,
+    "order": 1,
+    "subcategories": [
+      {
+        "id": "salades",
+        "name": "Salades",
+        "description": "Fraîches et généreuses",
+        "image": "images/entrees/salade-cesar.jpg",
+        "active": true
+      },
+      {
+        "id": "entrees-chaudes",
+        "name": "Entrées chaudes",
+        "description": "Croustillantes et gourmandes",
+        "image": "images/entrees/mozzarella.jpg",
+        "active": true
+      },
+      {
+        "id": "soupes",
+        "name": "Soupes",
+        "description": "Réconfortantes et savoureuses",
+        "image": "images/entrees/soupe.jpg",
+        "active": true
+      },
+      {
+        "id": "tapas",
+        "name": "Tapas",
+        "description": "À partager",
+        "image": "images/entrees/tapas.jpg",
+        "active": true
+      }
+    ]
+  },
+
+  {
+    "id": "plats",
+    "name": "Plats principaux",
+    "description": "Nos spécialités",
+    "section": "plats",
+    "image": "images/burger/signature.jpg",
+    "icon": "chef-hat",
+    "active": true,
+    "order": 2,
+    "subcategories": [
+      {
+        "id": "pizza",
+        "name": "Pizza",
+        "description": "Pizzas préparées avec passion",
+        "image": "images/pizza/margherita.jpg",
+        "active": true
+      },
+      {
+        "id": "burger",
+        "name": "Burger",
+        "description": "Nos burgers signature",
+        "image": "images/burger/signature.jpg",
+        "active": true
+      },
+      {
+        "id": "sushi",
+        "name": "Sushi",
+        "description": "Saveurs japonaises",
+        "image": "images/sushi/mix.jpg",
+        "active": true
+      },
+      {
+        "id": "pates",
+        "name": "Pâtes",
+        "description": "Pâtes et sauces maison",
+        "image": "images/pasta/carbonara.jpg",
+        "active": true
+      },
+      {
+        "id": "panini",
+        "name": "Panini",
+        "description": "Gourmands et généreux",
+        "image": "images/panini/poulet.jpg",
+        "active": true
+      },
+      {
+        "id": "sandwich",
+        "name": "Sandwich",
+        "description": "Rapides et savoureux",
+        "image": "images/panini/sandwich.jpg",
+        "active": true
+      },
+      {
+        "id": "poissons",
+        "name": "Poissons",
+        "description": "Poissons frais et grillés",
+        "image": "images/seafood/poisson.jpg",
+        "active": true
+      },
+      {
+        "id": "fruits-de-mer",
+        "name": "Fruits de mer",
+        "description": "Les saveurs de la mer",
+        "image": "images/seafood/fruits-mer.jpg",
+        "active": true
+      },
+      {
+        "id": "grillade",
+        "name": "Grillade",
+        "description": "Viandes grillées",
+        "image": "images/steak/grillade.jpg",
+        "active": true
+      },
+      {
+        "id": "steak-house",
+        "name": "Steak House",
+        "description": "Pièces de viande premium",
+        "image": "images/steak/steak-house.jpg",
+        "active": true
+      },
+      {
+        "id": "barbecue",
+        "name": "Barbecue",
+        "description": "Saveurs fumées et grillées",
+        "image": "images/steak/barbecue.jpg",
+        "active": true
+      },
+      {
+        "id": "plats-internationaux",
+        "name": "Plats internationaux",
+        "description": "Un voyage de saveurs",
+        "image": "images/international/chicken.jpg",
+        "active": true
+      },
+      {
+        "id": "risotto",
+        "name": "Risotto",
+        "description": "Crémeux et savoureux",
+        "image": "images/international/risotto-poulet.jpg",
+        "active": true
+      },
+      {
+        "id": "happy-kids",
+        "name": "Happy Kids",
+        "description": "Pour nos petits gourmands",
+        "image": "images/international/happy-kids.jpg",
+        "active": true
+      },
+      {
+        "id": "crepes-salees",
+        "name": "Crêpes salées",
+        "description": "Crêpes généreusement garnies",
+        "image": "images/international/crepe-poulet.jpg",
+        "active": true
+      }
+    ]
+  },
+
+  {
+    "id": "desserts",
+    "name": "Desserts",
+    "description": "Une touche gourmande",
+    "section": "desserts",
+    "image": "images/desserts/fondant.jpg",
+    "icon": "cake-slice",
+    "active": true,
+    "order": 3,
+    "subcategories": [
+      {
+        "id": "desserts",
+        "name": "Desserts",
+        "description": "Douceurs maison",
+        "image": "images/desserts/fondant.jpg",
+        "active": true
+      },
+      {
+        "id": "crepes-sucrees",
+        "name": "Crêpes sucrées",
+        "description": "Gourmandes et généreuses",
+        "image": "images/crepes/nutella.jpg",
+        "active": true
+      },
+      {
+        "id": "gaufres",
+        "name": "Gaufres",
+        "description": "Croustillantes et gourmandes",
+        "image": "images/gaufres/chocolat.jpg",
+        "active": true
+      },
+      {
+        "id": "glaces",
+        "name": "Glaces",
+        "description": "Fraîches et onctueuses",
+        "image": "images/desserts/glace.jpg",
+        "active": true
+      }
+    ]
+  },
+
+  {
+    "id": "boissons",
+    "name": "Boissons",
+    "description": "Fraîches, chaudes & gourmandes",
+    "section": "boissons",
+    "image": "images/breakfast/cocktail.jpg",
+    "icon": "cup-soda",
+    "active": true,
+    "order": 4,
+    "subcategories": [
+      {
+        "id": "jus",
+        "name": "Jus frais",
+        "description": "Fruits frais et naturels",
+        "image": "images/breakfast/orange.jpg",
+        "active": true
+      },
+      {
+        "id": "cocktails",
+        "name": "Cocktails",
+        "description": "Frais et rafraîchissants",
+        "image": "images/breakfast/mojito.jpg",
+        "active": true
+      },
+      {
+        "id": "coffee",
+        "name": "Coffee",
+        "description": "Café et spécialités",
+        "image": "images/coffee/cappuccino.jpg",
+        "active": true
+      },
+      {
+        "id": "tea",
+        "name": "Tea",
+        "description": "Thés et infusions",
+        "image": "images/tea/the-menthe.jpg",
+        "active": true
+      },
+      {
+        "id": "soft-drinks",
+        "name": "Soft Drinks",
+        "description": "Boissons fraîches",
+        "image": "images/breakfast/coca.jpg",
+        "active": true
+      }
+    ]
+  }
+]
